@@ -28,11 +28,12 @@ dependencies {
     annotationProcessor 'org.projectlombok:lombok'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+
     implementation 'org.postgresql:postgresql:42.3.8'
     implementation 'org.liquibase:liquibase-core:4.8.0'
     implementation 'org.springframework:spring-jdbc:5.3.10'
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc:2.5.5'
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.5'
     implementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
 }
@@ -40,3 +41,4 @@ dependencies {
 tasks.named('test') {
     useJUnitPlatform()
 }
+
