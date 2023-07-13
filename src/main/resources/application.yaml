@@ -9,7 +9,7 @@ spring:
 
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/auth_server
+    url: jdbc:postgresql://localhost:5434/demo_shop
     username: postgres
-    password: admin
+    password: postgres
     driver-class-name: org.postgresql.Driver
