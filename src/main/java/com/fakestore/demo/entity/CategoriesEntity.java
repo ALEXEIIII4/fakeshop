@@ -7,9 +7,9 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
 @Getter
 @Setter
+@NoArgsConstructor
 @Table(name = "categories", schema = "public")
 public class CategoriesEntity {
 
