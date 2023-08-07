@@ -16,7 +16,7 @@ public class GoodsEntity {
     @Id
     Long id;
 
-    BigDecimal title;
+    String title;
 
     String price;
 

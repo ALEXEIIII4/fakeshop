@@ -18,4 +18,12 @@ public class CategoriesEntity {
     private Long id;
 
     private String name;
+
+    public CategoriesEntity(String name) {
+        this.name = name;
+    }
+
+    public static CategoriesEntity createCategory(String name) {
+        return new CategoriesEntity(name);
+    }
 }

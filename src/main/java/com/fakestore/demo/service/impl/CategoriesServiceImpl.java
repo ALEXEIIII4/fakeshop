@@ -37,7 +37,7 @@ public class CategoriesServiceImpl implements CategoriesService {
     public List<GoodsDto> getGoodsByCategoryName(String name) {
         CategoriesEntity category = categoriesRepository.findByName(name)
                 .orElseThrow(() -> new ResourceNotFoundException("Do not have such category: " + name));
-        Optional<GoodsEntity> goodsEntities = goodsRepository.findAllByCategories(category.getName());
+        List<GoodsEntity> goodsEntities = goodsRepository.findAllByCategories(category);
         return goodsEntities
                 .stream()
                 .map(goodsMapper::goodsEntityToDto)
