@@ -2,9 +2,9 @@ package com.fakestore.demo.controller;
 
 import com.fakestore.demo.dto.CategoriesDto;
 import com.fakestore.demo.dto.GoodsDto;
-import com.fakestore.demo.service.impl.CategoriesServiceImpl;
-import lombok.AllArgsConstructor;
-import org.springframework.http.ResponseEntity;
+import com.fakestore.demo.service.CategoriesService;
+import io.swagger.v3.oas.annotations.Operation;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,20 +14,26 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/products/categories")
-@AllArgsConstructor
+@RequiredArgsConstructor
 public class CategoriesController {
+    private final CategoriesService categoriesService;
 
-    private final CategoriesServiceImpl categoriesService;
-
+    @Operation(
+            summary = "Get all categories",
+            description = "Get the list of all categories in FakeShop"
+    )
     @GetMapping
-    public ResponseEntity<List<CategoriesDto>> retrieveAllCategories() {
-        return ResponseEntity.ok(categoriesService.getAllCategoriesNames());
+    public List<CategoriesDto> retrieveAllCategories() {
+        return categoriesService.getAllCategoriesNames();
     }
 
+    @Operation(
+            summary = "Get products in a specific category",
+            description = "Get the list of products, but we need to choose category"
+    )
     @GetMapping("/{name}")
-    public ResponseEntity<List<GoodsDto>> retrieveOneCategories(@PathVariable String name) {
-        List<GoodsDto> goods = categoriesService.getGoodsByCategoryName(name);
-        return ResponseEntity.ok(goods);
+    public List<GoodsDto> retrieveOneCategories(@PathVariable String name) {
+        return categoriesService.getGoodsByCategoryName(name);
     }
 
 }

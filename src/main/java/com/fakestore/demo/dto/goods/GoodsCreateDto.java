@@ -1,25 +1,24 @@
 package com.fakestore.demo.dto.goods;
 
-import com.fakestore.demo.entity.CategoriesEntity;
+import com.fakestore.demo.dto.CategoriesDto;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
+@NoArgsConstructor
 public class GoodsCreateDto {
-
+    @NotNull
     String title;
 
+    @NotNull
     String price;
 
-    CategoriesEntity categories;
+    @NotNull
+    CategoriesDto category;
 
     String description;
-
-    public GoodsCreateDto(String title, String price, CategoriesEntity categories, String description) {
-        this.title = title;
-        this.price = price;
-        this.categories = categories;
-        this.description = description;
-    }
 }

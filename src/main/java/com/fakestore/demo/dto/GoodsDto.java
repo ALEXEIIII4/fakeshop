@@ -1,6 +1,5 @@
 package com.fakestore.demo.dto;
 
-import com.fakestore.demo.entity.CategoriesEntity;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,7 +10,6 @@ import javax.persistence.Id;
 @Getter
 @Setter
 public class GoodsDto {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
@@ -20,7 +18,7 @@ public class GoodsDto {
 
     String price;
 
-    CategoriesEntity categories;
+    CategoriesDto category;
 
     String description;
 

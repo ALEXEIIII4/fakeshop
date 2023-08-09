@@ -12,6 +12,12 @@ spring:
     password: postgres
     driver-class-name: org.postgresql.Driver
 
+
     jpa:
       hibernate:
         ddl-auto: validate
+
+
+springdoc:
+  swagger-ui:
+    enabled: true

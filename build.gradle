@@ -30,16 +30,18 @@ dependencies {
 
     implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
 
-    runtimeOnly('org.postgresql:postgresql:42.3.8')
-    implementation 'org.liquibase:liquibase-core:4.8.0'
-    implementation 'org.springframework.boot:spring-boot-starter-test:2.5.5'
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    runtimeOnly('org.postgresql:postgresql')
+    implementation 'org.liquibase:liquibase-core'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
 
     implementation 'org.mapstruct:mapstruct:1.5.5.Final'
     annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+    annotationProcessor('org.hibernate:hibernate-jpamodelgen')
+
+    implementation 'org.springdoc:springdoc-openapi-ui:1.5.12'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
 }
-

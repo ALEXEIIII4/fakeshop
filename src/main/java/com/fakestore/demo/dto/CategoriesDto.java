@@ -10,7 +10,6 @@ import javax.validation.constraints.NotNull;
 @Setter
 @AllArgsConstructor
 public class CategoriesDto {
-
     @NotNull
     Long id;
 

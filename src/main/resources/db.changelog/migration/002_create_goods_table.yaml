@@ -20,7 +20,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: price
-                  type: numeric
+                  type: VARCHAR(255)
               - column:
                   name: categories
                   type: VARCHAR(255)
