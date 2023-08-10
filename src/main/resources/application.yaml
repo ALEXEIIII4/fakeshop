@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  liquibase:
+    enabled: true
+    change-log: db.changelog/changelog-master.yaml
+
+  datasource:
+    url: jdbc:postgresql://localhost:5434/demo_shop
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+
+    jpa:
+      hibernate:
+        ddl-auto: validate
+
+
+springdoc:
+  swagger-ui:
+    enabled: true

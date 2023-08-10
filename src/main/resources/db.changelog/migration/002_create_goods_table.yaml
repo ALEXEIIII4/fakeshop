@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: create_goods_table
+      author: somov.a
+      changes:
+        - createTable:
+            tableName: goods
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: title
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: VARCHAR(255)
+              - column:
+                  name: categories
+                  type: VARCHAR(255)
+              - column:
+                  name: description
+                  type: VARCHAR(255)

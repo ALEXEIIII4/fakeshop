@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: add_categories_id_to_goods
+      author: somov.a
+      changes:
+        - addColumn:
+            columns:
+              - column:
+                  name: categories_id
+                  type: BIGINT
+                  constraints:
+                    foreignKeyName: fk_categories_id
+                    references: categories(id)
+            tableName: goods
